@@ -7,20 +7,32 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class Library {
+public class DefaultBookService implements BookService {
 
     private final BookRepository bookRepository;
 
-    public Library(BookRepository bookRepository) {
+    public DefaultBookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
 
-    public List<Book> getAll(){
+    @Override
+    public List<Book> getAll() {
         return bookRepository.findAll();
     }
 
+    @Override
+    public Book getByIsin(String isin) {
+        return bookRepository.getReferenceById(isin);
+    }
+
+    @Override
     public Book addBook(Book newBook) {
         return bookRepository.save(newBook);
+    }
+
+    @Override
+    public void deleteBook(String isin) {
+        //Todo: Implement
     }
 
 }
