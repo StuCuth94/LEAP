@@ -57,10 +57,9 @@ class BookServiceTest {
         Mockito.verify(bookRepository, times(1)).getReferenceById("ISIN");
     }
 
-    //Here's the new test
 //    @Test
 //    public void serviceShouldInvokeRepoDeleteById() {
-    //        systemUnderTest.deleteBook("ISIN");
+//        systemUnderTest.deleteBook("ISIN");
 //        Mockito.verify(bookRepository, times(1)).deleteById("ISIN");
 //    }
 

@@ -32,7 +32,7 @@ public class DefaultBookService implements BookService {
 
     @Override
     public void deleteBook(String isin) {
-        //Todo: Implement
+//        bookRepository.deleteById(isin);
     }
 
 }
